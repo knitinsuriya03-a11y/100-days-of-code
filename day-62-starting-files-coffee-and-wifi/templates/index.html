@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Find your next work cafe{% endblock %}
+
+{% block content %}
+<main class="home-page">
+  <section class="hero-section">
+    <div class="hero-copy">
+      <p class="eyebrow">Your workday, better brewed</p>
+      <h1>Find a cafe where <em>good work</em> comes naturally.</h1>
+      <p class="hero-text">A hand-picked guide to cafes with great coffee, reliable Wi-Fi, and a place to plug in.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="{{ url_for('cafes') }}">Explore the cafe list <span>→</span></a>
+        <a class="text-link" href="{{ url_for('add_cafe') }}">Know a hidden gem? Add it <span>↗</span></a>
+      </div>
+    </div>
+    <div class="hero-art" aria-label="Coffee cup and laptop illustration" role="img">
+      <div class="sun-disc"></div>
+      <div class="plant plant-left">✦</div>
+      <div class="coffee-cup"><span>☕</span></div>
+      <div class="laptop"><div class="screen">◎</div><div class="keyboard"></div></div>
+      <div class="hero-note">A better desk<br><strong>is nearby.</strong></div>
+    </div>
+  </section>
+  <section class="promise-row" aria-label="Cafe guide highlights">
+    <div><span class="promise-icon">⌁</span><strong>Work-ready</strong><small>Wi-Fi and power ratings</small></div>
+    <div><span class="promise-icon">✦</span><strong>Community-led</strong><small>Real spots, shared locally</small></div>
+    <div><span class="promise-icon">☕</span><strong>Coffee first</strong><small>Because the cup matters too</small></div>
+  </section>
+</main>
+
+{% endblock %}

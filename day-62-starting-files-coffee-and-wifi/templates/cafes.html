@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Browse cafes{% endblock %}
+
+{% block content %}
+
+<main class="listing-page page-wrap">
+  <div class="page-heading">
+    <div>
+      <p class="eyebrow">The community guide</p>
+      <h1>Good places to <em>settle in.</em></h1>
+      <p>Compare the essentials before you pack your laptop.</p>
+    </div>
+    <div class="cafe-count"><strong>{{ cafes[1:]|length }}</strong><span>spots<br>listed</span></div>
+  </div>
+  <div class="cafe-grid">
+    {% for row in cafes[1:] %}
+    <article class="cafe-card">
+      <div class="card-topline"><span class="spot-label">CAFE SPOT {{ '%02d'|format(loop.index) }}</span><span class="card-star">✦</span></div>
+      <h2>{{ row[0] }}</h2>
+      <div class="hours"><span>OPEN {{ row[2] }}</span><span class="hours-line"></span><span>{{ row[3] }}</span></div>
+      <div class="rating-list">
+        <div><span>Coffee</span><strong>{{ row[4] }}</strong></div>
+        <div><span>Wi-Fi</span><strong>{{ row[5] }}</strong></div>
+        <div><span>Power</span><strong>{{ row[6] }}</strong></div>
+      </div>
+      <a class="map-link" href="{{ row[1] }}" target="_blank" rel="noopener">Open in maps <span>↗</span></a>
+    </article>
+    {% endfor %}
+  </div>
+  <div class="bottom-prompt"><span>Have a favourite workspace?</span><a href="{{ url_for('add_cafe') }}">Share it with the community →</a></div>
+</main>
+
+{% endblock %}

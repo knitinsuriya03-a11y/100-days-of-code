@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+<!--Don't forget your import here-->
+{% block title %}Add A New Cafe{% endblock %}
+{% from "bootstrap5/form.html" import render_form %}
+
+{% block content %}
+<main class="form-page page-wrap">
+  <div class="form-intro">
+    <p class="eyebrow">Pass it on</p>
+    <h1>Know a cafe worth <em>staying for?</em></h1>
+    <p>Add the details that help someone choose their next favourite work spot.</p>
+    <div class="form-aside"><span>☕</span><p>Small contribution.<br><strong>Big workday energy.</strong></p></div>
+  </div>
+  <div class="form-panel">
+    {{ form.csrf_token }}
+    {{ render_form(form) }}
+    <p class="form-footnote">Your recommendation joins the shared local guide.</p>
+  </div>
+</main>
+
+{% endblock %}
